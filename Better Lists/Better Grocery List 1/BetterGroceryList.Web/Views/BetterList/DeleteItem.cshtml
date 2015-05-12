@@ -1,0 +1,24 @@
+﻿@model BetterGroceryList.Web.Models.BetterListItem
+
+@{
+    ViewBag.Title = "DeleteItem";
+}
+
+
+<h3>Are you sure you want to delete this?</h3>
+@using (Html.BeginForm()) {
+<fieldset>
+    <legend>DeleteItem</legend>
+    <h2>DeleteItem</h2>
+    @Html.DisplayFor(modelItem => Model.Name)
+    @Html.DisplayFor(modelItem => Model.Id)
+
+</fieldset>
+
+
+    <input type="submit" value="Delete" />
+    
+    <div>
+    @Html.ActionLink("Back to List", "ListView")
+</div>
+}

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterGroceryList.Web", "BetterGroceryList.Web\BetterGroceryList.Web.csproj", "{8959D626-ADCA-4967-8CA5-276C2A3ABF80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterGroceryList.Web.Tests", "BetterGroceryList.Web.Tests\BetterGroceryList.Web.Tests.csproj", "{6F369008-82B1-4CAB-B39D-CC3B417D5227}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://allyson.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BetterGroceryList.Web.Tests\\BetterGroceryList.Web.Tests.csproj
+		SccProjectName1 = BetterGroceryList.Web.Tests
+		SccLocalPath1 = BetterGroceryList.Web.Tests
+		SccProjectUniqueName2 = BetterGroceryList.Web\\BetterGroceryList.Web.csproj
+		SccProjectName2 = BetterGroceryList.Web
+		SccLocalPath2 = BetterGroceryList.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8959D626-ADCA-4967-8CA5-276C2A3ABF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8959D626-ADCA-4967-8CA5-276C2A3ABF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8959D626-ADCA-4967-8CA5-276C2A3ABF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8959D626-ADCA-4967-8CA5-276C2A3ABF80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F369008-82B1-4CAB-B39D-CC3B417D5227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F369008-82B1-4CAB-B39D-CC3B417D5227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F369008-82B1-4CAB-B39D-CC3B417D5227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F369008-82B1-4CAB-B39D-CC3B417D5227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

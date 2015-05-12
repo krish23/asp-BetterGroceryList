@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Better Lists</h3>
+<ul class="round">
+    <li class="one">
+        <h5>Welcome!</h5>
+        Here at Better Lists we strive for BETTER LISTS!      
+    </li>
+    @if (!Request.IsAuthenticated)
+    {
+        <li class="two">
+            <h5>Login to get started!</h5>
+
+        </li>
+    }
+</ul>

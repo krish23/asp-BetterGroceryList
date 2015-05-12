@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Better Lists</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        @Styles.Render("~/Content/bootstrap.min.css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">BetterLists</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    @if (Request.IsAuthenticated)
+                    {
+                    <text>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index", "BetterList")"  class="dropdown-toggle"  data-toggle="dropdown">Lists <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "BetterList")">Show My Lists</a></li>
+                                <li><a href="@Url.Action("CreateList", "BetterList")">Add A List</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">My Shared Lists</a></li>
+                                <li><a href="#">Shared With Me</a></li>
+                            </ul>
+                        </li>
+                     <!--   <li class="dropdown">
+                            <a href="@Url.Action("Index", "BetterListItem")" class="dropdown-toggle" data-toggle="dropdown">Items <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Show Items", "Index", "BetterListItem")</li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                    </text>
+                    }
+                    
+                    
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <section class="container">
+            <img src="@Url.Content("~/Images/RCDogzLogo1-120x87.png")" alt="Dog" />
+            @RenderBody()
+        </section>
+        <hr />
+        <footer class="container">
+            &copy; BetterLists @DateTime.Now.Year
+        </footer>
+
+
+
+        @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/betterlist")
+        @Scripts.Render("~/Scripts/bootstrap.js")
+    </body>
+</html>

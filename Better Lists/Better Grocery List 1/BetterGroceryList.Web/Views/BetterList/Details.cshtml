@@ -1,0 +1,25 @@
+﻿@model BetterGroceryList.Web.Models.BetterList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>List Details</h2>
+
+<fieldset>
+    @*<legend>BetterList</legend>*@
+
+    <br />
+    <div class="display-label">
+         <strong><i>@Html.DisplayNameFor(model => model.Name)</i></strong>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+   
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

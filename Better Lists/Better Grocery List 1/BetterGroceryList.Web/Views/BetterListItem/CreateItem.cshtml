@@ -1,0 +1,65 @@
+﻿@model BetterGroceryList.Web.Models.BetterListItem
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+@{
+    ViewBag.Title = "Additem";
+}
+
+<h2>Add Item</h2>
+@using (Html.BeginForm())
+{
+
+<fieldset>
+    <legend></legend>
+
+    <div class="editor-label">
+        
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Name, new { id = "autofill" })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <br />
+
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+
+    <br />
+
+    <div>
+        @Html.ActionLink("Back to List", "ListView")
+    </div>
+</fieldset>
+}
+
+<script type="text/javascript">
+    var url = '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "/Api/BetterListApi" })';
+    $('#autofill').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                data: { query: request.term },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.Name,
+                            value: item.Id
+                        }
+                    }));
+                }
+            })
+        },
+        select: function (event, ui) {
+            $('#autofill').val(ui.item.label);
+            $('#Id').val(ui.item.value);
+            return false;
+        },
+        minLength: 1
+    });
+</script>

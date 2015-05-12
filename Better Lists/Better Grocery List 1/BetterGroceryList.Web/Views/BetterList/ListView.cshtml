@@ -1,0 +1,54 @@
+﻿@model BetterGroceryList.Web.Models.BetterList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h2>List ID is: @ViewBag.listID</h2>
+@Html.ActionLink("Add", "AddItem")
+
+
+
+
+<br />
+<br />
+
+@foreach (var item in Model.ListMembers)
+{
+    <div>
+
+        @*@Html.DisplayFor(model => item.ListMemberships.First())*@
+        @Html.HiddenFor(model => item.ListItem.Name)
+        @Html.HiddenFor(model =>item.ListItemId)
+        <strong>Name: </strong>@Html.DisplayFor(model => item.ListItem.Name)
+        <br />
+        <strong>Quantity: </strong>@Html.DisplayFor(model => item.Quantity)
+        <br />
+
+        @Html.ActionLink("+", "AddQuantityItem", new { id = item.ListItem.Id, qty = 1 })
+      | @Html.ActionLink("-", "AddQuantityItem", new { id = item.ListItem.Id, qty = -1 })
+      | @Html.ActionLink("Edit", "EditListItem", item.ListItem)
+      | @Html.ActionLink("Edit Quantity", "EditListItemQuantity", item)
+      | @Html.ActionLink("Delete", "DeleteItem", new { id = item.ListItem.Id })
+       
+        <br /> <br />
+        
+    </div>
+    
+    
+}
+
+<br />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })|*@
+
+        </td>
+    
+

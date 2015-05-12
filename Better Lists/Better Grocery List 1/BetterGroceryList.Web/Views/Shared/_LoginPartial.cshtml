@@ -1,0 +1,21 @@
+﻿<ul class="nav navbar-nav navbar-right">
+    @if (Request.IsAuthenticated) {
+        <text>
+        <li class="dropdown">
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+                @Html.AntiForgeryToken()
+                
+            }
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello, @User.Identity.Name! <b class="caret"></b></a>
+            <ul class="dropdown-menu">        
+               <li><a href="@Url.Action("Index", "admin")">Admin Panel</a></li>
+                <li>@Html.ActionLink("Manage My Account", "Manage", "Account")</li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            </ul>
+        </li>
+            
+        </text>
+    } else {
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
+</ul>

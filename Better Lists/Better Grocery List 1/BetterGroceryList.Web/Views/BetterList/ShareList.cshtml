@@ -1,0 +1,33 @@
+﻿@model BetterGroceryList.Web.Models.SharedBetterList
+
+@{
+    ViewBag.Title = "ShareList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShareList</h2>
+@using (Html.BeginForm()) {
+   
+<fieldset>
+    <legend>BetterList</legend>
+
+    <table>
+        <tr>
+            <td>Please enter an email:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(Model => Model.UserEmailAddress)
+            </td>
+        </tr>
+    </table>
+         <div style="color:red;">@Html.Raw(ViewBag.msg1)</div>
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+</fieldset>
+}
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
